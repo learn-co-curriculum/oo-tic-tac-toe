@@ -12,10 +12,10 @@ class TicTacToe
   ]
 
   def initialize()
-    @board = Array.new(9)
+    @board = Array.new(9, " ")
   end
 
-  def call
+  def play
     puts "Welcome to Tic Tac Toe"
     while !(won? || draw?)
       turn
@@ -25,20 +25,13 @@ class TicTacToe
     elsif draw?
       puts "Cats Game!"
     end
-    puts "Play again? y/n"
-    input = gets.strip
-    if input == "y"
-      TicTacToe.new.call
-    else
-      puts "Goodbye"
-    end
   end
 
   def display_board
     puts " #{board[0]} | #{board[1]} | #{board[2]} "
-    puts "--------"
+    puts "-----------"
     puts " #{board[3]} | #{board[4]} | #{board[5]} "
-    puts "--------"
+    puts "-----------"
     puts " #{board[6]} | #{board[7]} | #{board[8]} "
   end
 
@@ -60,14 +53,20 @@ class TicTacToe
     turn_count % 2 == 0 ? "X" : "O"
   end
 
+  def full?
+    @board.all?{|token| token == "X" || token == "O"}
+  end
+
+  def over?
+    won? || draw?
+  end
+
   def turn_count
     @board.count{|token| token == "X" || token == "O"}
   end
 
   def move(location, token)
-    if valid_move?(location)
-      @board[location.to_i-1] = token
-    end
+    @board[location.to_i-1] = token
   end
 
   def won?
@@ -91,8 +90,8 @@ class TicTacToe
   def position(location)
     @board[location.to_i]
   end
-  
+
   def position_taken?(location)
-    !(position(location).nil? || position(location) == "")
+    !(position(location).nil? || position(location) == " ")
   end
 end
