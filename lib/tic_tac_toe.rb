@@ -16,12 +16,11 @@ class TicTacToe
   end
 
   def play
-    puts "Welcome to Tic Tac Toe"
-    while !(won? || draw?)
+    while !over?
       turn
     end
     if won?
-      puts "Congratulations! #{winner}"
+      puts "Congratulations #{winner}!"
     elsif draw?
       puts "Cats Game!"
     end
@@ -43,6 +42,7 @@ class TicTacToe
       turn
     end
     move(input, current_player)
+    display_board
   end
 
   def valid_move?(input)

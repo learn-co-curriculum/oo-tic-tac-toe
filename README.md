@@ -39,69 +39,17 @@ This is our main executable and will be how we run our game.
 
 #### `lib/tic_tac_toe.rb`
 
-All of our game methods will be coded here.
+Our main `TicTacToe` class will be defined here with all the data and logic required to play a game of tic tac toe via instances of `TicTacToe`.
 
 #### `spec`
 
-There are three test files that should be completed in order. `01_tic_tac_toe_spec.rb` sets tests for our helper methods. `02_play_spec.rb` tests the main `#play` method. `03_cli_spec.rb` tests the CLI.
+There are three test files that should be completed in order. `01_tic_tac_toe_spec.rb` sets tests for our helper methods within `TicTacToe`. `02_play_spec.rb` tests the main `#play` method. `03_cli_spec.rb` tests the CLI.
 
-### Your Tic Tac Toe Game
+### Your Object Oriented Tic Tac Toe
 
-There are infinite ways to build Tic Tac Toe. We, however, have been building up to a very specific structure with the methods we've been building throughout this course. We'll be using many of those methods here. These methods represent the basic requirements and logic of the game.
+We're going to be building a very well encapsulated object for Tic Tac Toe where each instance method will be a discrete, single, responsibility or functionality of a Tic Tac Toe game.
 
-Why build and utilize the helper methods we've been constructing?
-
-Let's take a look at what it would require to print out a board three times, without any helper methods:
-
-```ruby
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-
-puts " #{board[0]} | #{board[1]} | #{board[2]} "
-puts "-----------"
-puts " #{board[3]} | #{board[4]} | #{board[5]} "
-puts "-----------"
-puts " #{board[6]} | #{board[7]} | #{board[8]} "
-
-puts " #{board[0]} | #{board[1]} | #{board[2]} "
-puts "-----------"
-puts " #{board[3]} | #{board[4]} | #{board[5]} "
-puts "-----------"
-puts " #{board[6]} | #{board[7]} | #{board[8]} "
-
-puts " #{board[0]} | #{board[1]} | #{board[2]} "
-puts "-----------"
-puts " #{board[3]} | #{board[4]} | #{board[5]} "
-puts "-----------"
-puts " #{board[6]} | #{board[7]} | #{board[8]} "
-```
-
-Now, let's take a look at the same task, encapsulated into a method that we can simply call, or invoke, three times.
-
-```ruby
-def display_board(board)
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
-  puts "-----------"
-  puts " #{board[3]} | #{board[4]} | #{board[5]} "
-  puts "-----------"
-  puts " #{board[6]} | #{board[7]} | #{board[8]} "
-end
-
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-
-display_board(board)
-display_board(board)
-display_board(board)
-```
-
-When our logic is well encapsulated by individual methods everything about our code is easier. We can re-use the same logic again and again, painlessly.
-
-You'll approach building Tic Tac Toe in this manner, first defining helper methods according to the test requirements and then slowly putting them together to define the complete play logic.
-
-You'll then use this play method within a CLI and build a fully functioning 2 player Tic Tac Toe CLI in Ruby!
-
-### Game Conventions
-
-We'll be representing a Tic Tac Toe board using an array of `" "` strings. We'll pass this board to every method that as an argument so the helper methods can interact with or introspect on the board.
+We'll be following the Tic Tac Toe conventions of representing the board as an array with 9 elements where `" "` represents an empty cell in the board.
 
 We'll be getting user input via `gets` and a player will choose a position by entering 1-9. Our program will then fill out the appropriate position on the board with the player's token.
 
@@ -109,25 +57,35 @@ We will keep track of which player's turn it is and how many turns have been pla
 
 ## Instructions
 
-### Helper Methods
+### `TicTacToe` class.
 
-Open up `lib/tic_tac_toe.rb`. You'll be coding your helper methods here. Run the tests for these methods by typing `rspec spec/01_tic_tac_toe_spec.rb` in the terminal. Use the test output, along with the guidelines below, to build these methods.
+Open up `lib/tic_tac_toe.rb`. You'll be defining the main game class, `TicTacToe` in `lib/tic_tac_toe.rb`. Without that file defining a `TicTacToe` class, everything will break.
+
+Every method you build will be encapsulated by this class.
+
+### `#initialize` and `@board`
+
+The first test in `01_tic_tac_toe_spec.rb` will ensure the requirement that when a new game of Tic Tac Toe is started, represented by initializing an instance of `TicTacToe`, the instance of the game must create the starting state of the board, an array with 9 `" "` empty strings, within an instance variable `@board`
 
 #### `WIN_COMBINATIONS`
 
-Define a constant in `lib/tic_tac_toe.rb` `WIN_COMBINATIONS` and set it equal to a nested array filled with the index values for the various win combinations in tic tac toe.
+Define a constant in `lib/tic_tac_toe.rb` `WIN_COMBINATIONS` within the `TicTacToe` class and set it equal to a nested array filled with the index values for the various win combinations in tic tac toe. That constant can be referred to globally as `TicTacToe::WIN_COMBINATIONS`
 
 ```ruby
+# within the body of TicTacToe
+
 WIN_COMBINATIONS = [
   [0,1,2], # Top row
   [3,4,5]  # Middle row
   # ETC, an array for each win combination
 ]
+
+# the rest of the TicTacToe class definition
 ```
 
-#### `#display_board?`
+#### `#display_board`
 
-Define a method that prints the current board representation based on the `board` argument passed to the method.
+Define a method that prints the current board representation based on the `@board` instance variable.
 
 An empty board would be:
 
