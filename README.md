@@ -13,7 +13,7 @@ You're going to be building a 2 player CLI version of Tic Tac Toe by building a 
 
 ### Project Structure
 
-```
+```bash 
 ├── Gemfile
 ├── Gemfile.lock
 ├── README.md
