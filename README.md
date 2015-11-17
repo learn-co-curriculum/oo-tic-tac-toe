@@ -11,6 +11,10 @@ You're going to be building a 2 player CLI version of Tic Tac Toe by building a 
 
 <iframe width="100%" heigh="100%" src="https://www.youtube.com/embed/e4TMZ0f6qoI" frameborder="0" allowfullscreen></iframe>
 
+## Instructions
+
+**Run `bundle` within this lab's directory before getting started.**
+
 ### Project Structure
 
 ```
@@ -159,7 +163,7 @@ The `#winner` method should return the token, "X" or "O" that has won the game g
 
 #### `#play`
 
-The play method is the main method of the tic tac toe application and is responsible for the game loop. A tic tac toe game must allow players to tale turns, checking if the game is over after every turn, and at the conclusion of the game, whether because it was won or because it was a draw, reporting to the user the outcome of the game. You can imagine the pseudocode:
+The play method is the main method of the tic tac toe application and is responsible for the game loop. A tic tac toe game must allow players to take turns, checking if the game is over after every turn, and at the conclusion of the game, whether because it was won or because it was a draw, reporting to the user the outcome of the game. You can imagine the pseudocode:
 
 ```
 until the game is over
