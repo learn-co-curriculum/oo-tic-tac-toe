@@ -7,7 +7,7 @@
 
 ## Overview
 
-You're going to be building a 2 player CLI version of Tic Tac Toe by building a `TicTacToe` object. The game play with be very similar to other versions of TicTacToe.
+You're going to be building a 2 player CLI version of Tic Tac Toe by building a `TicTacToe` object. The game play will be very similar to other versions of TicTacToe.
 
 <iframe width="100%" heigh="100%" src="https://www.youtube.com/embed/e4TMZ0f6qoI" frameborder="0" allowfullscreen></iframe>
 
@@ -185,5 +185,3 @@ Your `bin/tictactoe` CLI should:
 
 1. Instantiate an instance of `TicTacToe`
 2. Start the game by calling `#play` on that instance.
-
-<a href='https://learn.co/lessons/oo-tic-tac-toe' data-visibility='hidden'>View this lesson on Learn.co</a>
