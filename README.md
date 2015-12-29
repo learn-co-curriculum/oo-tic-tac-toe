@@ -17,7 +17,7 @@ You're going to be building a 2 player CLI version of Tic Tac Toe by building a 
 
 ### Project Structure
 
-```
+```bash 
 ├── Gemfile
 ├── Gemfile.lock
 ├── README.md
@@ -51,7 +51,7 @@ There are three test files that should be completed in order. `01_tic_tac_toe_sp
 
 ### Your Object Oriented Tic Tac Toe
 
-We're going to be building a very well encapsulated object for Tic Tac Toe where each instance method will be a discrete, single, responsibility or functionality of a Tic Tac Toe game.
+We're going to be building a very well encapsulated object for Tic Tac Toe where each instance method will represent a discrete, single, responsibility or functionality of a Tic Tac Toe game.
 
 We'll be following the Tic Tac Toe conventions of representing the board as an array with 9 elements where `" "` represents an empty cell in the board.
 
@@ -69,11 +69,15 @@ Every method you build will be encapsulated by this class.
 
 ### `#initialize` and `@board`
 
-The first test in `01_tic_tac_toe_spec.rb` will ensure the requirement that when a new game of Tic Tac Toe is started, represented by initializing an instance of `TicTacToe`, the instance of the game must create the starting state of the board, an array with 9 `" "` empty strings, within an instance variable `@board`
+The first test in `01_tic_tac_toe_spec.rb` will ensure the requirement that when a new game of Tic Tac Toe is started, represented by initializing an instance of `TicTacToe`, the instance of the game must create the starting state of the board, an array with 9 `" "` empty strings, within an instance variable `@board`. 
+
+In other words, you `#initialize` method should set a `@board` variable equal to a new, empty, game board array.
 
 #### `WIN_COMBINATIONS`
 
-Define a constant in `lib/tic_tac_toe.rb` `WIN_COMBINATIONS` within the `TicTacToe` class and set it equal to a nested array filled with the index values for the various win combinations in tic tac toe. That constant can be referred to globally as `TicTacToe::WIN_COMBINATIONS`
+Define a constant in `lib/tic_tac_toe.rb`, `WIN_COMBINATIONS`, within the `TicTacToe` class and set it equal to a nested array filled with the index values for the various win combinations in tic tac toe. 
+
+**Top-Tip:** When you see this line, `TicTacToe::WIN_COMBINATIONS`, in the test suite, that means the test suite is accessing the constant `WIN_COMBINATIONS` that was declared inside the `TicTacToe` class. 
 
 ```ruby
 # within the body of TicTacToe
