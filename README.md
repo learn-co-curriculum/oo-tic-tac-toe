@@ -97,7 +97,7 @@ Define a method that prints the current board representation based on the `@boar
 
 #### `#move`
 
-Your `#move` method must take in two arguments, the location in the board array that the player would like to fill out with an "X" or and "O" and the player's character (either "X" or "O"). The second argument, the player's character, should have a default of "X". Regarding the player's input: if the user's input is `5`, the player wants to fill out position 5 with their character. This means that your method must fill out the correct array index with the player's character. Remember that, from the player's point of view, the board contains spaces 1-9. But, an array's indexes start their count at 0. You'll have to account for that in your `#move` method.
+Your `#move` method must take in two arguments, the location in the board array that the player chooses and the player's token (either "X" or "O"). The second argument, the player's token, should have a default of "X". Regarding the player's input: Remember that, from the player's point of view, the board contains spaces 1-9. But, an array's indexes start their count at 0. If the user's input is `5`, your method then must fill out the correct array index with the player's token. You'll have to account for that in your `#move` method.
 
 #### `#position_taken?`
 
@@ -189,3 +189,5 @@ Your `bin/tictactoe` CLI should:
 
 1. Instantiate an instance of `TicTacToe`
 2. Start the game by calling `#play` on that instance.
+
+<a href='https://learn.co/lessons/oo-tic-tac-toe' data-visibility='hidden'>View this lesson on Learn.co</a>
