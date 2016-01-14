@@ -71,7 +71,7 @@ Every method you build will be encapsulated by this class.
 
 The first test in `01_tic_tac_toe_spec.rb` will ensure the requirement that when a new game of Tic Tac Toe is started, represented by initializing an instance of `TicTacToe`, the instance of the game must create the starting state of the board, an array with 9 `" "` empty strings, within an instance variable `@board`. 
 
-In other words, you `#initialize` method should set a `@board` variable equal to a new, empty, game board array.
+In other words, your `#initialize` method should set a `@board` variable equal to a new, empty, game board array.
 
 #### `WIN_COMBINATIONS`
 
@@ -189,3 +189,5 @@ Your `bin/tictactoe` CLI should:
 
 1. Instantiate an instance of `TicTacToe`
 2. Start the game by calling `#play` on that instance.
+
+<a href='https://learn.co/lessons/oo-tic-tac-toe' data-visibility='hidden'>View this lesson on Learn.co</a>
