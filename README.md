@@ -190,4 +190,4 @@ Your `bin/tictactoe` CLI should:
 1. Instantiate an instance of `TicTacToe`
 2. Start the game by calling `#play` on that instance.
 
-<a href='https://learn.co/lessons/oo-tic-tac-toe' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/oo-tic-tac-toe' title='Tic Tac Toe in Ruby'>Tic Tac Toe in Ruby</a> on Learn.co and start learning to code for free.</p>
