@@ -41,14 +41,14 @@ describe './lib/tic_tac_toe.rb' do
       it 'defines a constant WIN_COMBINATIONS with arrays for each win combination' do
         expect(TicTacToe::WIN_COMBINATIONS.size).to eq(8)
 
-        expect(TicTacToe::WIN_COMBINATIONS).to include([0,1,2])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([3,4,5])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([6,7,8])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([0,3,6])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([1,4,7])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([2,5,8])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([0,4,8])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([6,4,2])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([0,1,2]).or include([2,1,0])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([3,4,5]).or include([5,4,3])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([6,7,8]).or include([8,7,6])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([0,3,6]).or include([6,3,0])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([1,4,7]).or include([7,4,1])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([2,5,8]).or include([8,5,2])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([0,4,8]).or include([8,4,0])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([6,4,2]).or include([2,4,6])
       end
     end
 
@@ -70,17 +70,17 @@ describe './lib/tic_tac_toe.rb' do
         board = ["X", " ", " ", " ", " ", " ", " ", " ", "O"]
         game.instance_variable_set(:@board, board)
 
-        position = 0
-        expect(game.position_taken?(position)).to be(true)
+        index = 0
+        expect(game.position_taken?(index)).to be(true)
 
-        position = 8
-        expect(game.position_taken?(position)).to be(true)
+        index = 8
+        expect(game.position_taken?(index)).to be(true)
 
-        position = 1
-        expect(game.position_taken?(position)).to be(false)
+        index = 1
+        expect(game.position_taken?(index)).to be(false)
 
-        position = 7
-        expect(game.position_taken?(position)).to be(false)
+        index = 7
+        expect(game.position_taken?(index)).to be(false)
       end
     end
 

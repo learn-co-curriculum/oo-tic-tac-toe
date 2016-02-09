@@ -7,8 +7,8 @@ class TicTacToe
     [0,3,6],
     [1,4,7],
     [2,5,8],
-    [0,4,8],
-    [6,4,2]
+    [8,4,0],
+    [2,4,6]
   ]
 
   def initialize()
@@ -91,7 +91,7 @@ class TicTacToe
     @board[location.to_i]
   end
 
-  def position_taken?(location)
-    !(position(location).nil? || position(location) == " ")
+  def position_taken?(index)
+    !(position(index).nil? || position(index) == " ")
   end
 end
