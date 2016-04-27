@@ -90,6 +90,7 @@ WIN_COMBINATIONS = [
 
 # the rest of the TicTacToe class definition
 ```
+**Note** The methods we will be decribing now have been defined in previous labs. You can copy those and paste them in this lab, and tweak them sightly to make them pass the tests.
 
 #### `#display_board`
 
