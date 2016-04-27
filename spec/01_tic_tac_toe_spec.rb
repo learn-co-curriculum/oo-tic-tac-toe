@@ -102,11 +102,11 @@ describe './lib/tic_tac_toe.rb' do
     end
 
     describe '#turn' do
-      it 'makes valid moves' do
+      it 'makes valid moves and displays the board' do
         game = TicTacToe.new
         allow($stdout).to receive(:puts)
-
         expect(game).to receive(:gets).and_return("1")
+        expect(game).to receive(:display_board)
 
         game.turn
       end
