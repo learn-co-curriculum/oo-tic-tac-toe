@@ -9,6 +9,21 @@ describe './lib/tic_tac_toe.rb' do
       end
     end
 
+    describe 'WIN_COMBINATIONS' do
+      it 'defines a constant WIN_COMBINATIONS with arrays for each win combination' do
+        expect(TicTacToe::WIN_COMBINATIONS.size).to eq(8)
+
+        expect(TicTacToe::WIN_COMBINATIONS).to include([0,1,2])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([3,4,5])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([6,7,8])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([0,3,6])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([1,4,7])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([2,5,8])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([0,4,8])
+        expect(TicTacToe::WIN_COMBINATIONS).to include([6,4,2])
+      end
+    end
+
     describe '#display_board' do
       it 'prints arbitrary arrangements of the board' do
         board = ["X", "X", "X", "X", "O", "O", "X", "O", "O"]
@@ -34,21 +49,6 @@ describe './lib/tic_tac_toe.rb' do
         expect(output).to include(" O | X | X ")
         expect(output).to include("-----------")
         expect(output).to include(" O | X | O ")
-      end
-    end
-
-    describe 'WIN_COMBINATIONS' do
-      it 'defines a constant WIN_COMBINATIONS with arrays for each win combination' do
-        expect(TicTacToe::WIN_COMBINATIONS.size).to eq(8)
-
-        expect(TicTacToe::WIN_COMBINATIONS).to include([0,1,2])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([3,4,5])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([6,7,8])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([0,3,6])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([1,4,7])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([2,5,8])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([0,4,8])
-        expect(TicTacToe::WIN_COMBINATIONS).to include([6,4,2])
       end
     end
 
