@@ -90,6 +90,7 @@ WIN_COMBINATIONS = [
 
 # the rest of the TicTacToe class definition
 ```
+**Tip** The next bunch of methods we will be decribing have already been defined in previous labs. You can copy your code from those labs, paste them in this one and tweak them sightly to work with the object oriented approach to pass the tests.
 
 #### `#display_board`
 
@@ -101,7 +102,7 @@ Your `#move` method must take in two arguments, the location in the board array 
 
 #### `#position_taken?`
 
-The `#position_taken?` method will be responsible for evaluating the user's input against the Tic Tac Toe board and checking to see whether or not that position is occupied. If the user inputs that they would like to fill out position `2`, our `#position_taken?` method will check to see if that position is vacant or if it contains an "X" or and "O". If the position is free, the method should return `false` (i.e. "not taken"), otherwise it will return `true`.
+The `#position_taken?` method will be responsible for evaluating the user's input against the Tic Tac Toe board and checking to see whether or not that position is occupied. If the user inputs that they would like to fill out position `2`, our `#position_taken?` method will check to see if that position is vacant or if it contains an "X" or and "O". If the position is free, the method should return `false` (i.e. "not taken"), otherwise it will return `true`. This method will also deal with 'user friendly' data (a String with a 1-9 number)
 
 #### `#valid_move?`
 
@@ -116,9 +117,8 @@ Build a method `#turn` to encapsulate the logic of a single complete turn compos
 
 1. Asking the user for their move by position 1-9.
 2. Receiving the user input.
-3. If the move is valid, make the move.
+3. If the move is valid, make the move and display the board
 4. If the move is invalid, ask for a new move until a valid move is received.
-5. Display the board after the valid move has been made.
 
 All these procedures will be wrapped into our `#turn` method. However, the majority of the logic for these procedures will be defined and encapsulated in individual methods which you've already built.
 
@@ -129,10 +129,10 @@ ask for input
 get input
 if input is valid
   make the move for input
+  show the board
 else
   ask for input again until you get a valid input
 end
-show the board
 ```
 
 #### `#turn_count`
