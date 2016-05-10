@@ -9,7 +9,7 @@
 
 You're going to be building a 2 player CLI version of Tic Tac Toe by building a `TicTacToe` object. The game play will be very similar to other versions of TicTacToe.
 
-<iframe width="100%" heigh="100%" src="https://www.youtube.com/embed/e4TMZ0f6qoI" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/e4TMZ0f6qoI" frameborder="0" allowfullscreen></iframe>
 
 ## Instructions
 
@@ -191,3 +191,5 @@ Your `bin/tictactoe` CLI should:
 2. Start the game by calling `#play` on that instance.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/oo-tic-tac-toe' title='Tic Tac Toe in Ruby'>Tic Tac Toe in Ruby</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/oo-tic-tac-toe'>OO Tic Tac Toe</a> on Learn.co and start learning to code for free.</p>
