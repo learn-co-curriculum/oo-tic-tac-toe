@@ -90,7 +90,7 @@ WIN_COMBINATIONS = [
 
 # the rest of the TicTacToe class definition
 ```
-**Tip** The next bunch of methods we will be decribing have already been defined in previous labs. You can copy your code from those labs, paste them in this one and tweak them sightly to work with the object oriented approach to pass the tests.
+**Tip:** The next bunch of methods we will be describing have already been defined in previous labs. You can copy your code from those labs, paste them in this one and tweak them sightly to work with the object oriented approach to pass the tests.
 
 #### `#display_board`
 
