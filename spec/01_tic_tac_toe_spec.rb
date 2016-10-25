@@ -70,16 +70,16 @@ describe './lib/tic_tac_toe.rb' do
         board = ["X", " ", " ", " ", " ", " ", " ", " ", "O"]
         game.instance_variable_set(:@board, board)
 
-        position = 0
-        expect(game.position_taken?(position)).to be(true)
-
-        position = 8
-        expect(game.position_taken?(position)).to be(true)
-
         position = 1
+        expect(game.position_taken?(position)).to be(true)
+
+        position = 9
+        expect(game.position_taken?(position)).to be(true)
+
+        position = 2
         expect(game.position_taken?(position)).to be(false)
 
-        position = 7
+        position = 8
         expect(game.position_taken?(position)).to be(false)
       end
     end
