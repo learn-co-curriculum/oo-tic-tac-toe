@@ -52,6 +52,24 @@ describe './lib/tic_tac_toe.rb' do
       end
     end
 
+    describe '#input_to_index' do
+      it "accepts the user's input (a string) as an argument" do
+        game = TicTacToe.new
+        expect(game.input_to_index).to raise_error(ArgumentError)
+      end
+
+      it "converts the user's input (a string) into an integer" do
+        game = TicTacToe.new
+        expect(game.input_to_index("1")).to be_an(Integer)
+      end
+
+      it "converts the user's input from the user-friendly format (on a 1-9 scale) to the array-friendly format (where the first index starts at 0)" do
+        game = TicTacToe.new
+        expect(game.input_to_index("1")).to eq(0)
+        expect(game.input_to_index("5")).to eq(4)
+      end
+    end
+
     describe '#move' do
       it 'allows "X" player in the top left and "O" in the middle' do
         game = TicTacToe.new
