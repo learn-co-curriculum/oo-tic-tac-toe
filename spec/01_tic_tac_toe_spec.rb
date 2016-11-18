@@ -73,8 +73,8 @@ describe './lib/tic_tac_toe.rb' do
     describe '#move' do
       it 'allows "X" player in the top left and "O" in the middle' do
         game = TicTacToe.new
-        game.move(1, "X")
-        game.move(5, "O")
+        game.move(0, "X")
+        game.move(4, "O")
 
         board = game.instance_variable_get(:@board)
 
@@ -103,19 +103,28 @@ describe './lib/tic_tac_toe.rb' do
     end
 
     describe '#valid_move?' do
-      it 'returns true/false based on position' do
+      it 'accepts the index for a prospective move as an argument' do
+        game = TicTacToe.new
+        expect(game.valid_move?).to raise_error(ArgumentError)
+      end
+
+      it 'expects the index to be passed in as an integer' do
+        game = TicTacToe.new
+        expect(game.valid_move?("1")).to raise_error(ArgumentError)
+      end
+
+      it 'calls on #position_taken?' do
         game = TicTacToe.new
         board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
         game.instance_variable_set(:@board, board)
 
-        position = "1"
-        expect(game.valid_move?(position)).to be_truthy
+        expect(game.valid_move?(0)).to receive(:position_taken?).and_return(false)
+        expect(game.valid_move?(4)).to receive(:position_taken?).and_return(true)
+      end
 
-        position = "5"
-        expect(game.valid_move?(position)).to be_falsey
-
-        position = "invalid"
-        expect(game.valid_move?(position)).to be_falsey
+      it 'checks that the attempted move is within the bounds of the game board'
+        game = TicTacToe.new
+        expect(game.valid_move?(99)).to be_falsey
       end
     end
 
