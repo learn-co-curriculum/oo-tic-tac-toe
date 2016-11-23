@@ -55,7 +55,7 @@ describe './lib/tic_tac_toe.rb' do
     describe '#input_to_index' do
       it "accepts the user's input (a string) as an argument" do
         game = TicTacToe.new
-        expect(game.input_to_index).to raise_error(ArgumentError)
+        expect{game.input_to_index}.to raise_error(ArgumentError)
       end
 
       it "converts the user's input (a string) into an integer" do
@@ -103,26 +103,19 @@ describe './lib/tic_tac_toe.rb' do
     end
 
     describe '#valid_move?' do
-      it 'accepts the index for a prospective move as an argument' do
-        game = TicTacToe.new
-        expect(game.valid_move?).to raise_error(ArgumentError)
-      end
-
-      it 'expects the index to be passed in as an integer' do
-        game = TicTacToe.new
-        expect(game.valid_move?("1")).to raise_error(ArgumentError)
-      end
-
-      it 'calls on #position_taken?' do
+      it 'returns true/false based on whether the position is already occupied' do
         game = TicTacToe.new
         board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
         game.instance_variable_set(:@board, board)
 
-        expect(game.valid_move?(0)).to receive(:position_taken?).and_return(false)
-        expect(game.valid_move?(4)).to receive(:position_taken?).and_return(true)
+        position = 0
+        expect(game.valid_move?(position)).to be_truthy
+
+        position = 4
+        expect(game.valid_move?(position)).to be_falsey
       end
 
-      it 'checks that the attempted move is within the bounds of the game board'
+      it 'checks that the attempted move is within the bounds of the game board' do
         game = TicTacToe.new
         expect(game.valid_move?(99)).to be_falsey
       end
