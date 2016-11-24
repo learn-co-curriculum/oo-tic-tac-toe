@@ -122,6 +122,26 @@ describe './lib/tic_tac_toe.rb' do
       end
     end
 
+    describe '#turn_count' do
+      it 'counts occupied positions' do
+        game = TicTacToe.new
+        board = ["O", " ", " ", " ", "X", " ", " ", " ", "X"]
+        game.instance_variable_set(:@board, board)
+
+        expect(game.turn_count).to eq(3)
+      end
+    end
+
+    describe '#current_player' do
+      it 'returns the correct player, X, for the third move' do
+        game = TicTacToe.new
+        board = ["O", " ", " ", " ", "X", " ", " ", " ", " "]
+        game.instance_variable_set(:@board, board)
+
+        expect(game.current_player).to eq("X")
+      end
+    end
+
     describe '#turn' do
       it 'makes valid moves and displays the board' do
         game = TicTacToe.new
@@ -140,26 +160,6 @@ describe './lib/tic_tac_toe.rb' do
         expect(game).to receive(:gets).and_return("1")
 
         game.turn
-      end
-    end
-
-    describe '#turn_count' do
-      it 'counts occupied positions' do
-        game = TicTacToe.new
-        board = ["O", " ", " ", " ", "X", " ", " ", " ", "X"]
-        game.instance_variable_set(:@board, board)
-
-        expect(game.turn_count).to eq(3)
-      end
-    end
-
-    describe '#current_player' do
-      it 'returns the correct player, X, for the third move' do
-        game = TicTacToe.new
-        board = ["O", " ", " ", " ", "X", " ", " ", " ", " "]
-        game.instance_variable_set(:@board, board)
-
-        expect(game.current_player).to eq("X")
       end
     end
 
