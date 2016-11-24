@@ -145,6 +145,14 @@ describe './lib/tic_tac_toe.rb' do
 
         expect(game.current_player).to eq("X")
       end
+
+      it 'returns the correct player, O, for the fourth move' do
+        game = TicTacToe.new
+        board = ["O", " ", " ", " ", "X", " ", " ", " ", "X"]
+        game.instance_variable_set(:@board, board)
+
+        expect(game.current_player).to eq("O")
+      end
     end
 
     describe '#turn' do
