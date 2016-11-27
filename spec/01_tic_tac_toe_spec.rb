@@ -206,12 +206,12 @@ describe './lib/tic_tac_toe.rb' do
         expect(game.won?).to be_falsey
       end
 
-      it 'returns true for a win' do
+      it 'returns the winning combo for a win' do
         game = TicTacToe.new
-        board = ["X", "O", "X", "O", "X", "X", "O", "O", "X"]
+        board = ["X", "O", "X", "O", "X", "O", "O", "X", "X"]
         game.instance_variable_set(:@board, board)
 
-        expect(game.won?).to be_truthy
+        expect(game.won?).to contain_exactly(0,4,8)
       end
     end
 
