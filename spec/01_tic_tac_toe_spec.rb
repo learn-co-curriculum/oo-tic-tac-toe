@@ -83,22 +83,22 @@ describe './lib/tic_tac_toe.rb' do
     end
 
     describe '#position_taken?' do
-      it 'returns true/false based on position in board' do
+      it 'returns true/false based on whether the position on the board is already occupied' do
         game = TicTacToe.new
         board = ["X", " ", " ", " ", " ", " ", " ", " ", "O"]
         game.instance_variable_set(:@board, board)
 
-        position = 0
-        expect(game.position_taken?(position)).to be(true)
+        index = 0
+        expect(game.position_taken?(index)).to be(true)
 
-        position = 8
-        expect(game.position_taken?(position)).to be(true)
+        index = 8
+        expect(game.position_taken?(index)).to be(true)
 
-        position = 1
-        expect(game.position_taken?(position)).to be(false)
+        index = 1
+        expect(game.position_taken?(index)).to be(false)
 
-        position = 7
-        expect(game.position_taken?(position)).to be(false)
+        index = 7
+        expect(game.position_taken?(index)).to be(false)
       end
     end
 
@@ -108,11 +108,11 @@ describe './lib/tic_tac_toe.rb' do
         board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
         game.instance_variable_set(:@board, board)
 
-        position = 0
-        expect(game.valid_move?(position)).to be_truthy
+        index = 0
+        expect(game.valid_move?(index)).to be_truthy
 
-        position = 4
-        expect(game.valid_move?(position)).to be_falsey
+        index = 4
+        expect(game.valid_move?(index)).to be_falsey
       end
 
       it 'checks that the attempted move is within the bounds of the game board' do
