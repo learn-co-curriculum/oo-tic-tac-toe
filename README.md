@@ -151,7 +151,7 @@ The `#current_player` method should use the `#turn_count` method to determine if
 
 #### `#won?`
 
-Your `#won?` method should return false/nil if there is no win combination present in the board and return the winning combination indexes as an array if there is a win. Use your `WIN_COMBINATIONS` constant in this method.
+Your `#won?` method should return false/nil if there is no win combination present in the board and return the winning combination indexes as an array if there is a win. Use your `WIN_COMBINATIONS` constant in this method. Please note that this is the first time you'll need to return a winning combo. Previous tests only required `#won?` to be truthy.
 
 #### `#full?`
 
@@ -197,3 +197,5 @@ Your `bin/tictactoe` CLI should:
 2. Start the game by calling `#play` on that instance.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/oo-tic-tac-toe' title='Tic Tac Toe in Ruby'>OO Tic Tac Toe</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/oo-tic-tac-toe'>OO Tic Tac Toe</a> on Learn.co and start learning to code for free.</p>
