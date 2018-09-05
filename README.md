@@ -21,7 +21,6 @@ You're going to be building a 2 player CLI version of Tic Tac Toe by building a 
 ├── Gemfile
 ├── Gemfile.lock
 ├── README.md
-├── Rakefile
 ├── bin
 │   └── tictactoe
 ├── lib
@@ -33,7 +32,7 @@ You're going to be building a 2 player CLI version of Tic Tac Toe by building a 
     └── spec_helper.rb
 ```
 
-#### Gemfile and Rakefile
+#### Gemfile
 
 These files set up some tools and gems for our project and can mostly be ignored. Make sure to run `bundle` before starting this project so that you have all the required gems.
 
