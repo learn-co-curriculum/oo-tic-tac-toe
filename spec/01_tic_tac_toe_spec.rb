@@ -252,7 +252,7 @@ describe './lib/tic_tac_toe.rb' do
 
       it 'returns false for an in-progress game' do
         game = TicTacToe.new
-        board = ["X", " ", "X", " ", "X", " ", "O", "O", "X"]
+        board = ["X", " ", "X", " ", "X", " ", "O", "O", " "]
         game.instance_variable_set(:@board, board)
 
         expect(game.draw?).to be_falsey
