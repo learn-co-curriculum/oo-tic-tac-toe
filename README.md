@@ -11,18 +11,16 @@ You're going to be building a 2 player CLI version of Tic Tac Toe by building a
 `TicTacToe` object. The game play will be very similar to other versions of
 TicTacToe.
 
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/e4TMZ0f6qoI" frameborder="0" allowfullscreen></iframe>
-
 ## Instructions
 
 In order to get everything working you should refer to these instructions as you
-go *and* pay close attention to the test output.
+go _and_ pay close attention to the test output.
 
 **Run `bundle` within this lab's directory before getting started.**
 
 ### Project Structure
 
-```bash 
+```txt
 ├── Gemfile
 ├── Gemfile.lock
 ├── README.md
@@ -125,7 +123,7 @@ that will be called by other methods in your code. This keeps our code [DRY] and
 well encapsulated &mdash; each method has a single responsibility &mdash; which
 makes the code easier to maintain and expand.
 
-[DRY]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 
 #### `#display_board`
 
@@ -140,7 +138,7 @@ the `@board` array. Remember that, from the player's point of view, the board
 contains spaces 1-9. But the indices in an array start their count at 0. If the
 user inputs `5`, your method must correctly translate that from the player's
 perspective to the array's perspective &mdash; accounting for the fact that
-`@board[5]` is *not* where the user intended to place their token.
+`@board[5]` is _not_ where the user intended to place their token.
 
 #### `#move`
 
@@ -152,7 +150,7 @@ second argument, the player's token, should default to `"X"`.
 
 The `#position_taken?` method will be responsible for evaluating the user's
 desired move against the Tic Tac Toe board and checking to see whether or not
-that position is already occupied. Note that this method will be running *after*
+that position is already occupied. Note that this method will be running _after_
 `#input_to_index`, so it will be checking index values. When it is passed the
 index value for a prospective move, `#position_taken?` will check to see if that
 position on the `@board` is vacant or if it contains an `"X"` or an `"O"`. If
@@ -194,7 +192,7 @@ sequence of events listed above: asking for input, translating it into an index,
 checking whether the move is valid and, if it is, making the move.
 Theoretically, we could code all that into our `else` but that would definitely
 violate DRY principles. And what if the user enters an invalid move a second or
-third or tenth time? What we really need to do is *restart* the `turn` method
+third or tenth time? What we really need to do is _restart_ the `turn` method
 each time an invalid move is entered. Luckily, Ruby (and many other programming
 languages) allows us to call a method from inside itself. This process of
 calling a method from inside itself is commonly used in [recursion].
@@ -213,7 +211,7 @@ methods requires.
 
 You can imagine the pseudocode for the `#turn` method:
 
-```
+```txt
 ask for input
 get input
 translate input into index
@@ -262,7 +260,7 @@ turns, checking if the game is over after every turn. At the conclusion of the
 game, whether because it was won or ended in a draw, the game should report to
 the user the outcome of the game. You can imagine the pseudocode:
 
-```
+```txt
 until the game is over
   take turns
 end
